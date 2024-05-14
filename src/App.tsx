@@ -1,29 +1,30 @@
-import { 
-  Center,
-  ChakraProvider,
-  Input,
-  Box,
-  Button
-} from '@chakra-ui/react'
-import { login } from './services/login';
-import { Header } from './components/Header';
-import { BtnLogin } from './components/BtnLogin';
-import { Card } from './components/Card';
 
-import { useState } from 'react';
+import { BrowserRouter, Route , Routes} from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Layout } from "./components/Layout";
+import Conta from './Pages/conta';
+import Home from './Pages/home';
 
 function App() {
-
-  return (
+  return(
+    <BrowserRouter>
     <ChakraProvider>
+      <Layout>
+        <Routes>
 
-      <Header></Header>
-      <Card></Card>
+          <Route path="/" element={<Home />} />
+          <Route path="/conta" element={<Conta />} />
 
-
-
+        </Routes>
+      </Layout>
     </ChakraProvider>
-  );
+    </BrowserRouter>
+
+);
+
+
 }
 
 export default App;
+
+

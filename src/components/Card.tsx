@@ -1,9 +1,7 @@
 import { 
   Center,
-  ChakraProvider,
   Input,
   Box,
-  Button
 } from '@chakra-ui/react'
 import { BtnLogin } from './BtnLogin';
 import { login } from '../services/login';
